@@ -1,0 +1,15 @@
+services:
+- autoDeploy: 'true'
+  branch: main
+  buildCommand: pip install -r requirements.txt
+  env: python
+  envVars:
+  - key: PYTHON_VERSION
+    value: '3.9'
+  - key: MODEL_FILE
+    value: best_model.pkl
+  name: ml-service
+  plan: free
+  repo: https://github.com/Parthsawant1298/ml-project-1743091111.git
+  startCommand: python load_model.py
+  type: web
